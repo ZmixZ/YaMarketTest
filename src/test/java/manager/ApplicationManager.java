@@ -12,6 +12,7 @@ public class ApplicationManager {
     private SpecificationHelper specificationHelper;
     private SearchHelper searchHelper;
     private String browser;
+    private TiresHelper tiresHelper;
 
     public ApplicationManager(String browser) {
 
@@ -27,6 +28,8 @@ public class ApplicationManager {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         searchHelper = new SearchHelper(driver);
         specificationHelper = new SpecificationHelper(driver, this);
+        tiresHelper = new TiresHelper(driver, this);
+
     }
 
     public void enterWebsite() {

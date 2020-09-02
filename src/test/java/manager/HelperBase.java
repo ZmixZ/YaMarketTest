@@ -1,4 +1,4 @@
-package com.example.work.pilot.manager;
+package manager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;

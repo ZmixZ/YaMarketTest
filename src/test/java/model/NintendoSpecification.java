@@ -1,4 +1,4 @@
-package com.example.work.pilot.model;
+package model;
 
 
 public class NintendoSpecification {

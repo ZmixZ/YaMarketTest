@@ -1,4 +1,4 @@
-package com.example.work.pilot.manager;
+package manager;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;

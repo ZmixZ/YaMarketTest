@@ -1,6 +1,6 @@
-package com.example.work.pilot.manager;
+package manager;
 
-import com.example.work.pilot.model.NintendoSpecification;
+import model.NintendoSpecification;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

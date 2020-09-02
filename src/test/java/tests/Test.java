@@ -1,7 +1,7 @@
-package com.example.work.pilot.tests;
+package tests;
 
-import com.example.work.pilot.model.NintendoSpecification;
-import com.example.work.pilot.manager.TestBase;
+import manager.TestBase;
+import model.NintendoSpecification;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 

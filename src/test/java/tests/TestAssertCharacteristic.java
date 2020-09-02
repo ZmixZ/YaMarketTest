@@ -2,14 +2,20 @@ package tests;
 
 import manager.TestBase;
 import model.NintendoSpecification;
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class Test extends TestBase {
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.*;
 
-  @org.testng.annotations.Test
+public class TestAssertCharacteristic extends TestBase {
+
+  @Test
   public void testS() throws Exception {
     app.enterWebsite();
     app.getSearchHelper().searchProduct("nintendo switch");
@@ -34,13 +40,7 @@ public class Test extends TestBase {
         list1.get(2).getText(), null, null,
         app.getSpecificationHelper().getSetColors().iterator().next(), list1.get(12).getText(), list1.get(19).getText());
 
-        Assert.assertEquals(nt, nt1);
+        assertThat(nt, equalTo(nt1));
 
-        //Assert.assertEquals(nt.getType(), nt1.getType()); // проверка совпадения типов
-        //Assert.assertEquals(nt.getColor(), nt1.getColor()); // проверка совпадения цветов
-        //Assert.assertEquals(nt.getMemory(), nt1.getMemory()); // проверка совпадения наличия слотов карты памяти
-        //Assert.assertEquals(nt.getScreen(), nt1.getScreen()); // проверка совпадения размера экранов
         }
-
-
         }

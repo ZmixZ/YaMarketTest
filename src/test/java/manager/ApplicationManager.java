@@ -47,4 +47,6 @@ public class ApplicationManager {
     public SpecificationHelper getSpecificationHelper() {
         return specificationHelper;
     }
+
+    public TiresHelper getTiresHelper() { return tiresHelper; }
 }

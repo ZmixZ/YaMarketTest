@@ -20,7 +20,7 @@ public class TiresHelper extends HelperBase {
 
     public void test() throws InterruptedException {
         //app.driver.findElement(By.xpath("//div[@class='_10dWCjaZug']")).click();
-        driver.findElement(By.xpath("//div[@class='PXL2nleaah']")).click();
+        driver.findElement(By.id("27903767-tab")).click();
         driver.findElement(By.id("41042240-tab")).click();
         driver.findElement(By.xpath("//a[text()='Шины']/..")).click();
         driver.findElement(By.xpath("//input[@id='glpricefrom']")).sendKeys("1500");

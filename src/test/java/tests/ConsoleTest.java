@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TabletTest extends TestBase {
+public class ConsoleTest extends TestBase {
 
     @Test
     public void testTablet() throws InterruptedException {

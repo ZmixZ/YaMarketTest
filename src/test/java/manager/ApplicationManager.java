@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
 
+import javax.jws.soap.SOAPBinding;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
@@ -13,6 +14,8 @@ public class ApplicationManager {
     private SearchHelper searchHelper;
     private String browser;
     private TiresHelper tiresHelper;
+    private ConsoleHelper consoleHelper;
+    private UserHelper userHelper;
 
     public ApplicationManager(String browser) {
 
@@ -29,6 +32,9 @@ public class ApplicationManager {
         searchHelper = new SearchHelper(driver);
         specificationHelper = new SpecificationHelper(driver, this);
         tiresHelper = new TiresHelper(driver, this);
+        consoleHelper = new ConsoleHelper(driver);
+        userHelper = new UserHelper(driver, this);
+
 
     }
 
@@ -49,4 +55,6 @@ public class ApplicationManager {
     }
 
     public TiresHelper getTiresHelper() { return tiresHelper; }
+
+    public UserHelper getUserHelper() { return userHelper; }
 }

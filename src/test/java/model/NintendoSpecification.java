@@ -83,4 +83,17 @@ public class NintendoSpecification {
         return this;
     }
 
+    @Override
+    public String toString() {
+        return "NintendoSpecification{" +
+                "color='" + color + '\'' +
+                ", type='" + type + '\'' +
+                ", screen='" + screen + '\'' +
+                ", memory='" + memory + '\'' +
+                ", capacity='" + capacity + '\'' +
+                ", weight='" + weight + '\'' +
+                ", controller='" + controller + '\'' +
+                ", accessories='" + accessories + '\'' +
+                '}';
+    }
 }

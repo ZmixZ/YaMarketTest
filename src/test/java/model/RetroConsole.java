@@ -181,4 +181,25 @@ public class RetroConsole {
     public int hashCode() {
         return Objects.hash(formFactor, form, screenDiagonal, screenResolution, architecture, mediaType, memoryCardSlot, preinstallGames, battery, batteryCapacity, length, width, height, weight, anotherInformation);
     }
+
+    @Override
+    public String toString() {
+        return "RetroConsole{" +
+                "formFactor='" + formFactor + '\'' +
+                ", form='" + form + '\'' +
+                ", screenDiagonal='" + screenDiagonal + '\'' +
+                ", screenResolution='" + screenResolution + '\'' +
+                ", architecture='" + architecture + '\'' +
+                ", mediaType='" + mediaType + '\'' +
+                ", memoryCardSlot='" + memoryCardSlot + '\'' +
+                ", preinstallGames='" + preinstallGames + '\'' +
+                ", battery='" + battery + '\'' +
+                ", batteryCapacity='" + batteryCapacity + '\'' +
+                ", length='" + length + '\'' +
+                ", width='" + width + '\'' +
+                ", height='" + height + '\'' +
+                ", weight='" + weight + '\'' +
+                ", anotherInformation='" + anotherInformation + '\'' +
+                '}';
+    }
 }

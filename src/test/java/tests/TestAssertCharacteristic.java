@@ -5,18 +5,26 @@ import model.NintendoSpecification;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.FileReader;
 import java.util.List;
+import java.util.Properties;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class TestAssertCharacteristic extends TestBase {
 
+    Properties properties;
+
   @Test
   public void testS() throws Exception {
+
+      properties = new Properties();
+      properties.load(new FileReader(new File("src/test/resources/local.properties")));
     app.enterWebsite();
-    app.getSearchHelper().searchProduct("nintendo switch");
-    app.getSearchHelper().clickProduct("Игровая приставка Nintendo Switch");
+    app.getSearchHelper().searchProduct(properties.getProperty("web.switch"));
+    app.getSearchHelper().clickProduct(properties.getProperty("web.defaultSwitch"));
     String oneTab = app.getSearchHelper().saveOldTab(); // сохраняем первую вкладку
     app.getSpecificationHelper().getWindow(1);
     app.getSearchHelper().clickCharacteristic();
@@ -27,8 +35,8 @@ public class TestAssertCharacteristic extends TestBase {
             app.getSpecificationHelper().getSetColors().iterator().next(),
             list.get(8).getText(), list.get(15).getText());
 
-    app.getSearchHelper().searchProduct("nintendo switch");
-        app.getSearchHelper().clickProduct("Игровая приставка Nintendo Switch Lite");
+    app.getSearchHelper().searchProduct(properties.getProperty("web.switch"));
+        app.getSearchHelper().clickProduct(properties.getProperty("web.liteSwitch"));
         app.getSpecificationHelper().getWindow(2);
         app.getSearchHelper().clickCharacteristic();
         List<WebElement> list1 = app.getSpecificationHelper().getListPoints();

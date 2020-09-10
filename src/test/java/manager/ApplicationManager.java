@@ -6,6 +6,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
 
 import javax.jws.soap.SOAPBinding;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
@@ -16,13 +21,14 @@ public class ApplicationManager {
     private TiresHelper tiresHelper;
     private ConsoleHelper consoleHelper;
     private UserHelper userHelper;
+    private Properties properties;
 
-    public ApplicationManager(String browser) {
-
+    public ApplicationManager(String browser){
         this.browser = browser;
     }
 
     public void start() {
+
         if(browser == BrowserType.CHROME){
             driver = new ChromeDriver();
         } else {

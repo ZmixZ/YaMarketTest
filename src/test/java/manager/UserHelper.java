@@ -26,11 +26,11 @@ public class UserHelper extends HelperBase{
         click(By.xpath("//a[text()='Изменить данные']"));
     }
 
-    public void changeData(String name, String lastname, String day, String mouth, String year, String country, String city) {
+    public void changeData(String name, String lastname, String day, String month, String year, String country, String city) {
         ap.getSearchHelper().write(By.id("firstname"), name);
         ap.getSearchHelper().write(By.id("lastname"), lastname);
         ap.getSearchHelper().write(By.id("birthday-day"), day);
-        new Select(ap.driver.findElement(By.xpath("//select[@name='month']"))).selectByVisibleText(mouth);
+        new Select(ap.driver.findElement(By.xpath("//select[@name='month']"))).selectByVisibleText(month);
         ap.getSearchHelper().write(By.id("birthday-year"), year);
         //if(app.driver.findElement(By.name("xcrb41")).getText().equals("Женский")){
         //app.driver.findElement(By.xpath("//div[text()='Мужской']")).click(); }

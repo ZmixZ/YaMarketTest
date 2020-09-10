@@ -16,6 +16,12 @@ public class SearchHelper extends HelperBase{
         type(By.id("header-search"), By.xpath("//div[text()='Найти']/.."), attributeName);
     }
 
+    public void searchByLinks(){
+        click(By.id("27903767-tab"));
+        click(By.id("41042240-tab"));
+        click(By.xpath("//a[text()='Шины']/.."));
+    }
+
     public void clickCharacteristic() {
         click(By.linkText("Характеристики"));
     }

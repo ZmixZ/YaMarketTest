@@ -2,13 +2,11 @@ package tests;
 
 import manager.TestBase;
 import model.RetroConsole;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ConsoleTest extends TestBase {
 
@@ -16,7 +14,7 @@ public class ConsoleTest extends TestBase {
     public void testTablet() throws InterruptedException {
         app.enterWebsite();
         app.getConsoleHelper().search();
-        app.getConsoleHelper().findGenesisGopher();
+        app.getConsoleHelper().findGenesisGopher("Игровая приставка Genesis Gopher 2 (500 игр)");
         app.getSpecificationHelper().getWindow(1);
         app.getSearchHelper().clickCharacteristic();
         ArrayList<WebElement> list = app.getConsoleHelper().getListPoints();

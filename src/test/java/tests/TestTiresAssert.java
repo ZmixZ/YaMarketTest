@@ -11,7 +11,8 @@ public class TestTiresAssert extends TestBase {
     @Test
     public void testT() throws InterruptedException {
         app.enterWebsite();
-        app.getTiresHelper().test();
+        app.getSearchHelper().searchByLinks();
+        app.getTiresHelper().filterTires("1500", "6000");
         List<Tires> tires = app.getTiresHelper().listTires();
         for(Tires e : tires){
             System.out.println(e.getName());

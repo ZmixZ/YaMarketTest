@@ -20,12 +20,12 @@ public class ConsoleHelper  extends HelperBase{
         click(By.xpath("//a[text()='Ретро консоли']"));
     }
 
-    public void findGenesisGopher() {
+    public void findGenesisGopher(String consoleName) {
         List<WebElement> tablet = ap.driver.findElements(By.xpath("//h3[@class='_3dCGE8Y9v3 _25uOAS5e4A']//a"));
         for (WebElement i : tablet) {
-            if (i.getText().equals("Игровая приставка Genesis Gopher 2 (500 игр)")) {
+            if (i.getText().equals(consoleName)) {
                 //ap.driver.findElement(By.linkText("Игровая приставка Genesis Gopher 2 (500 игр)")).click();
-                click(By.linkText("Игровая приставка Genesis Gopher 2 (500 игр)"));
+                click(By.linkText(consoleName));
             }
         }
     }

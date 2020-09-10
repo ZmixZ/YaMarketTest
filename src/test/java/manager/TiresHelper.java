@@ -18,13 +18,9 @@ public class TiresHelper extends HelperBase {
         this.ap = ap;
     }
 
-    public void test() throws InterruptedException {
-        //app.driver.findElement(By.xpath("//div[@class='_10dWCjaZug']")).click();
-        driver.findElement(By.xpath("//div[@class='_3Lwc_UVFq4']")).click();
-        driver.findElement(By.id("41042240-tab")).click();
-        driver.findElement(By.xpath("//a[text()='Шины']/..")).click();
-        driver.findElement(By.xpath("//input[@id='glpricefrom']")).sendKeys("1500");
-        driver.findElement(By.xpath("//input[@id='glpriceto']")).sendKeys("3000");
+    public void filterTires(String lowPrice, String hightPrice) throws InterruptedException {
+        driver.findElement(By.xpath("//input[@id='glpricefrom']")).sendKeys(lowPrice);
+        driver.findElement(By.xpath("//input[@id='glpriceto']")).sendKeys(hightPrice);
         driver.findElement(By.xpath("//li[2]/div/a/label/div")).click();
         driver.findElement(By.xpath("//div/fieldset/ul/li[2]/div/label/div")).click();
     }

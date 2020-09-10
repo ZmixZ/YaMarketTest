@@ -12,18 +12,18 @@ public class UserHelper extends HelperBase{
         this.ap = ap;
     }
 
-    public void login(By emailLocator, String email, By passLocator, String pass) {
-        driver.findElement(By.linkText("Войти")).click();
+    public void login(String email, String pass) {
+        click(By.linkText("Войти"));
         ap.getSpecificationHelper().getWindow(1);
-        ap.getSearchHelper().type(emailLocator, By.xpath("//button[@type='submit']"), email);
-        ap.getSearchHelper().type(passLocator,
+        ap.getSearchHelper().type(By.xpath("//input[@type='text']"), By.xpath("//button[@type='submit']"), email);
+        ap.getSearchHelper().type(By.xpath("//input[@name='passwd']"),
                 By.xpath("//button[@type='submit']"), pass);
     }
 
     public void goToYaMarketConfiguration() {
-        driver.findElement(By.xpath("//button[@class='_1YeOF5Jcfi _3qbyNoLh_b']")).click();
-        driver.findElement(By.xpath("//span[text()='Настройки Маркета']")).click();
-        driver.findElement(By.xpath("//a[text()='Изменить данные']")).click();
+        click(By.xpath("//button[@class='_1YeOF5Jcfi _3qbyNoLh_b']"));
+        click(By.xpath("//span[text()='Настройки Маркета']"));
+        click(By.xpath("//a[text()='Изменить данные']"));
     }
 
     public void changeData(String name, String lastname, String day, String mouth, String year, String country, String city) {
@@ -36,7 +36,7 @@ public class UserHelper extends HelperBase{
         //app.driver.findElement(By.xpath("//div[text()='Мужской']")).click(); }
         new Select(ap.driver.findElement(By.xpath("//select[@name='country']"))).selectByVisibleText(country);
         ap.getSearchHelper().write(By.id("city"), city);
-        ap.driver.findElement(By.xpath("//button[@type='submit']")).click();
+        click(By.xpath("//button[@type='submit']"));
         //app.driver.findElement(By.xpath("//span[text()='Изменить регион']")).click();
         //app.getSearchHelper().type(By.id("header-search"), By.xpath("//span[@class='_14Uuc5WvKg']"), "Москва");
     }

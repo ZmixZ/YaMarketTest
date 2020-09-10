@@ -32,7 +32,7 @@ public class ApplicationManager {
         searchHelper = new SearchHelper(driver);
         specificationHelper = new SpecificationHelper(driver, this);
         tiresHelper = new TiresHelper(driver, this);
-        consoleHelper = new ConsoleHelper(driver);
+        consoleHelper = new ConsoleHelper(driver, this);
         userHelper = new UserHelper(driver, this);
 
 
@@ -57,4 +57,6 @@ public class ApplicationManager {
     public TiresHelper getTiresHelper() { return tiresHelper; }
 
     public UserHelper getUserHelper() { return userHelper; }
+
+    public ConsoleHelper getConsoleHelper() {return consoleHelper; }
 }

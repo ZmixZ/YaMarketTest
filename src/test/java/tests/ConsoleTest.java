@@ -21,13 +21,7 @@ public class ConsoleTest extends TestBase {
         app.getSearchHelper().clickCharacteristic();
         ArrayList<WebElement> list = app.getConsoleHelper().getListPoints();
 
-        RetroConsole retro = new RetroConsole().withFormFactor(list.get(1).getText()).withForm(list.get(2).getText()).
-                withScreenDiagonal(list.get(3).getText()).withScreenResolution(list.get(4).getText()).
-                withArchitecture(list.get(5).getText()).withMediaType(list.get(6).getText()).
-                withMemoryCardSlot(list.get(7).getText()).withPreinstallGames(list.get(8).getText()).
-                withBattery(list.get(9).getText()).withBatteryCapacity(list.get(10).getText()).
-                withLength(list.get(11).getText()).withWidth(list.get(12).getText()).withHeight(list.get(13).getText()).
-                withWeight(list.get(14).getText()).withAnotherInformation(list.get(15).getText());
+        RetroConsole retro = app.getConsoleHelper().getRetroConsole(list);
 
         RetroConsole model = app.getConsoleHelper().getModel();
 

@@ -1,6 +1,7 @@
 package manager;
 
 import model.Tires;
+import org.checkerframework.checker.units.qual.A;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,9 +9,11 @@ import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class TiresHelper extends HelperBase {
 
+    Properties properties;
     ApplicationManager ap;
 
     public TiresHelper(WebDriver driver, ApplicationManager ap) {
@@ -34,4 +37,18 @@ public class TiresHelper extends HelperBase {
         return list;
     }
 
+    public List <Tires> listModelTires(){
+        List<Tires> list = new ArrayList<>();
+        list.add(new Tires().withName(properties.getProperty("web.tires1")));
+        list.add(new Tires().withName(properties.getProperty("web.tires2")));
+        list.add(new Tires().withName(properties.getProperty("web.tires3")));
+        list.add(new Tires().withName(properties.getProperty("web.tires4")));
+        list.add(new Tires().withName(properties.getProperty("web.tires5")));
+        list.add(new Tires().withName(properties.getProperty("web.tires6")));
+        list.add(new Tires().withName(properties.getProperty("web.tires7")));
+        list.add(new Tires().withName(properties.getProperty("web.tires8")));
+        list.add(new Tires().withName(properties.getProperty("web.tires9")));
+        list.add(new Tires().withName(properties.getProperty("web.tires10")));
+        return list;
+    }
 }

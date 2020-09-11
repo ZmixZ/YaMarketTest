@@ -31,5 +31,3 @@ public class SearchHelper extends HelperBase{
     }
 
 }
-// _10dWCjaZug
-//     _1j7ucNWfVd

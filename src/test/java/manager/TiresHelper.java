@@ -40,21 +40,14 @@ public class TiresHelper extends HelperBase {
         }
         return list;
     }
-
+    
     public List <Tires> listModelTires() throws IOException {
+        List<Tires> list = new ArrayList<>();
         properties = new Properties();
         properties.load(new FileReader(new File("src/test/resources/local.properties")));
-        List<Tires> list = new ArrayList<>();
-        list.add(new Tires().withName(properties.getProperty("web.tires1")));
-        list.add(new Tires().withName(properties.getProperty("web.tires2")));
-        list.add(new Tires().withName(properties.getProperty("web.tires3")));
-        list.add(new Tires().withName(properties.getProperty("web.tires4")));
-        list.add(new Tires().withName(properties.getProperty("web.tires5")));
-        list.add(new Tires().withName(properties.getProperty("web.tires6")));
-        list.add(new Tires().withName(properties.getProperty("web.tires7")));
-        list.add(new Tires().withName(properties.getProperty("web.tires8")));
-        list.add(new Tires().withName(properties.getProperty("web.tires9")));
-        list.add(new Tires().withName(properties.getProperty("web.tires10")));
+        for(int i = 1; i < properties.size(); i++){
+            list.add(new Tires().withName(properties.getProperty("web.tires" + i)));
+        }
         return list;
     }
 }

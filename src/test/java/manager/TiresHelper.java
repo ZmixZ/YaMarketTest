@@ -40,7 +40,7 @@ public class TiresHelper extends HelperBase {
         }
         return list;
     }
-    
+
     public List <Tires> listModelTires() throws IOException {
         List<Tires> list = new ArrayList<>();
         properties = new Properties();

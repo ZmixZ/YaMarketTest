@@ -27,14 +27,16 @@ public class ApplicationManager {
         this.browser = browser;
     }
 
-    public void start() {
-
+    public void start() throws IOException {
+        properties = new Properties();
+        properties.load(new FileReader(new File("src/test/resources/local.properties")));
         if(browser == BrowserType.CHROME){
             driver = new ChromeDriver();
         } else {
             driver = new FirefoxDriver();
         }
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.get(properties.getProperty("web.baseUrl"));
         searchHelper = new SearchHelper(driver);
         specificationHelper = new SpecificationHelper(driver, this);
         tiresHelper = new TiresHelper(driver, this);
@@ -42,10 +44,6 @@ public class ApplicationManager {
         userHelper = new UserHelper(driver, this);
 
 
-    }
-
-    public void enterWebsite() {
-      driver.get("https://market.yandex.ru/");
     }
 
     public void stop() {

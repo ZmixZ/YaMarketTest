@@ -26,7 +26,6 @@ public class ConsoleTest extends TestBase {
     public void testTablet() throws IOException, InterruptedException {
         properties = new Properties();
         properties.load(new FileReader(new File("src/test/resources/local.properties")));
-        app.enterWebsite();
         app.getConsoleHelper().search();
         app.getConsoleHelper().findGenesisGopher(properties.getProperty("web.consoleName"));
         app.getSpecificationHelper().getWindow(1);

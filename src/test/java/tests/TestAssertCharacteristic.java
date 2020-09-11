@@ -22,7 +22,6 @@ public class TestAssertCharacteristic extends TestBase {
 
       properties = new Properties();
       properties.load(new FileReader(new File("src/test/resources/local.properties")));
-    app.enterWebsite();
     app.getSearchHelper().searchProduct(properties.getProperty("web.switch"));
     app.getSearchHelper().clickProduct(properties.getProperty("web.defaultSwitch"));
     String oneTab = app.getSearchHelper().saveOldTab(); // сохраняем первую вкладку

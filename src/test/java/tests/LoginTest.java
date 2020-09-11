@@ -4,7 +4,6 @@ import manager.TestBase;
 import org.testng.annotations.Test;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
@@ -14,7 +13,7 @@ public class LoginTest extends TestBase {
     Properties properties;
 
     @Test
-    public void loginTest() throws InterruptedException, IOException {
+    public void loginTest() throws IOException {
         properties = new Properties();
         properties.load(new FileReader(new File("src/test/resources/local.properties")));
         app.enterWebsite();

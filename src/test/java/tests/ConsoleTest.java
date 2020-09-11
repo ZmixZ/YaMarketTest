@@ -23,7 +23,7 @@ public class ConsoleTest extends TestBase {
     Properties properties;
 
     @Test
-    public void testTablet() throws IOException {
+    public void testTablet() throws IOException, InterruptedException {
         properties = new Properties();
         properties.load(new FileReader(new File("src/test/resources/local.properties")));
         app.enterWebsite();

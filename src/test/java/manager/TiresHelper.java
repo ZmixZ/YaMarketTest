@@ -7,6 +7,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -37,7 +41,9 @@ public class TiresHelper extends HelperBase {
         return list;
     }
 
-    public List <Tires> listModelTires(){
+    public List <Tires> listModelTires() throws IOException {
+        properties = new Properties();
+        properties.load(new FileReader(new File("src/test/resources/local.properties")));
         List<Tires> list = new ArrayList<>();
         list.add(new Tires().withName(properties.getProperty("web.tires1")));
         list.add(new Tires().withName(properties.getProperty("web.tires2")));

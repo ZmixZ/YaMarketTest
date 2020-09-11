@@ -7,10 +7,8 @@ import org.hamcrest.MatcherAssert;
 import org.testng.annotations.Test;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -26,14 +24,14 @@ public class TestTiresAssert extends TestBase {
         properties = new Properties();
         properties.load(new FileReader(new File("src/test/resources/local.properties")));
         app.enterWebsite();
-        Thread.sleep(4000);
+        Thread.sleep(6000);
         app.getSearchHelper().searchByLinks();
         app.getTiresHelper().filterTires(properties.getProperty("web.lowPrice"), properties.getProperty("web.hightPrice"));
         List<Tires> tires = app.getTiresHelper().listTires();
 
         List<Tires> list = app.getTiresHelper().listModelTires();
 
-        MatcherAssert.assertThat(list, CoreMatchers.equalTo(tires));
+        assertThat(list, equalTo(tires));
 
     }
 }

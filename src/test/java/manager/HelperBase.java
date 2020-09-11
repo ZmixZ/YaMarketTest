@@ -22,6 +22,7 @@ public class HelperBase {
     }
 
     public void write(By locator, String attributeName) {
+        click(locator);
         driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(attributeName);
     }
@@ -30,7 +31,7 @@ public class HelperBase {
         return driver.findElement(locator).getAttribute(text);
     }
 
-    private boolean isElementPresent(By by) {
+    public boolean isElementPresent(By by) {
         try {
             driver.findElement(by);
             return true;
@@ -39,7 +40,7 @@ public class HelperBase {
         }
     }
 
-    private boolean isAlertPresent() {
+    public boolean isAlertPresent() {
         try {
             driver.switchTo().alert();
             return true;

@@ -40,39 +40,12 @@ public class User {
         return this;
     }
 
-    public String getMonth() {
-        return month;
-    }
-
-    public User withMonth(String month) {
-        this.month = month;
-        return this;
-    }
-
     public int getYear() {
         return year;
     }
 
     public User withYear(int year) {
         this.year = year;
-        return this;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public User withSex(String sex) {
-        this.sex = sex;
-        return this;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public User withCountry(String country) {
-        this.country = country;
         return this;
     }
 

@@ -1,5 +1,6 @@
 package manager;
 
+import model.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -26,7 +27,7 @@ public class UserHelper extends HelperBase{
         click(By.xpath("//a[text()='Изменить данные']"));
     }
 
-    public void changeData(String name, String lastname, String day, String month, String year, String country, String city) {
+    public User changeData(String name, String lastname, String day, String month, String year, String country, String city) {
         ap.getSearchHelper().write(By.id("firstname"), name);
         ap.getSearchHelper().write(By.id("lastname"), lastname);
         ap.getSearchHelper().write(By.id("birthday-day"), day);
@@ -36,8 +37,19 @@ public class UserHelper extends HelperBase{
         driver.findElement(By.xpath("//input[@value='1']")).click(); }
         new Select(ap.driver.findElement(By.xpath("//select[@name='country']"))).selectByVisibleText(country);
         ap.getSearchHelper().write(By.id("city"), city);
+        User user = getUserData();
         click(By.xpath("//button[@type='submit']"));
         //app.driver.findElement(By.xpath("//span[text()='Изменить регион']")).click();
         //app.getSearchHelper().type(By.id("header-search"), By.xpath("//span[@class='_14Uuc5WvKg']"), "Москва");
+        return user;
+    }
+
+    public User getUserData() {
+        User user = new User().withName(ap.driver.findElement(By.id("firstname")).getAttribute("value")).
+                withLastname(ap.driver.findElement(By.id("lastname")).getAttribute("value")).
+                withDay(ap.driver.findElement(By.id("birthday-day")).getAttribute("value")).
+                withYear(Integer.parseInt(ap.driver.findElement(By.id("birthday-year")).getAttribute("value"))).
+                withCity(ap.driver.findElement(By.id("city")).getAttribute("value"));
+        return user;
     }
 }

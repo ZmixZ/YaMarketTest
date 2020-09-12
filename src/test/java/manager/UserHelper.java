@@ -27,7 +27,7 @@ public class UserHelper extends HelperBase{
         click(By.xpath("//a[text()='Изменить данные']"));
     }
 
-    public User changeData(String name, String lastname, String day, String month, String year, String country, String city) {
+    public User changeData(String name, String lastname, String day, String month, String year, String country, String city) throws InterruptedException {
         ap.getSearchHelper().write(By.id("firstname"), name);
         ap.getSearchHelper().write(By.id("lastname"), lastname);
         ap.getSearchHelper().write(By.id("birthday-day"), day);
@@ -45,11 +45,11 @@ public class UserHelper extends HelperBase{
     }
 
     public User getUserData() {
-        User user = new User().withName(ap.driver.findElement(By.id("firstname")).getAttribute("value")).
-                withLastname(ap.driver.findElement(By.id("lastname")).getAttribute("value")).
-                withDay(ap.driver.findElement(By.id("birthday-day")).getAttribute("value")).
-                withYear(Integer.parseInt(ap.driver.findElement(By.id("birthday-year")).getAttribute("value"))).
-                withCity(ap.driver.findElement(By.id("city")).getAttribute("value"));
+        User user = new User().withName(ap.getSearchHelper().getAttribute(By.id("firstname"), "value")).
+                withLastname(ap.getSearchHelper().getAttribute(By.id("lastname"), "value")).
+                withDay(ap.getSearchHelper().getAttribute(By.id("birthday-day"), "value")).
+                withYear(Integer.parseInt(ap.getSearchHelper().getAttribute(By.id("birthday-year"), "value"))).
+                withCity(ap.getSearchHelper().getAttribute(By.id("city"), "value"));
         return user;
     }
 }

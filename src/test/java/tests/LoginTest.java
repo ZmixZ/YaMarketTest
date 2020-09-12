@@ -31,7 +31,7 @@ public class LoginTest extends TestBase {
     }
 
     @Test(dataProvider = "iterator")
-    public void loginTest(User user) throws IOException {
+    public void loginTest(User user) throws IOException, InterruptedException {
         properties = new Properties();
         properties.load(new FileReader(new File("src/test/resources/local.properties")));
         app.getUserHelper().login(properties.getProperty("web.email"), properties.getProperty("web.pass"));

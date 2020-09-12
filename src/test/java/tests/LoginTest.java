@@ -44,5 +44,6 @@ public class LoginTest extends TestBase {
         User modelUser = user;
 
         assertThat(modelUser, equalTo(userInYaMarket));
+
     }
 }

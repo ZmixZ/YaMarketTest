@@ -21,7 +21,7 @@ public class HelperBase {
         click(locator1);
     }
 
-    public void write(By locator, String attributeName) throws InterruptedException {
+    public void write(By locator, String attributeName) {
         driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(attributeName);
     }

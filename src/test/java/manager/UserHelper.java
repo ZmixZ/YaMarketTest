@@ -32,8 +32,8 @@ public class UserHelper extends HelperBase{
         ap.getSearchHelper().write(By.id("birthday-day"), day);
         new Select(ap.driver.findElement(By.xpath("//select[@name='month']"))).selectByVisibleText(month);
         ap.getSearchHelper().write(By.id("birthday-year"), year);
-        //if(app.driver.findElement(By.name("xcrb41")).getText().equals("Женский")){
-        //app.driver.findElement(By.xpath("//div[text()='Мужской']")).click(); }
+        if(ap.getSearchHelper().isElementPresent(By.xpath("//input[@value='2']"))){
+        driver.findElement(By.xpath("//input[@value='1']")).click(); }
         new Select(ap.driver.findElement(By.xpath("//select[@name='country']"))).selectByVisibleText(country);
         ap.getSearchHelper().write(By.id("city"), city);
         click(By.xpath("//button[@type='submit']"));

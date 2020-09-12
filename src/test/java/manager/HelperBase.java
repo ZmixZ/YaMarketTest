@@ -22,7 +22,6 @@ public class HelperBase {
     }
 
     public void write(By locator, String attributeName) {
-        click(locator);
         driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(attributeName);
     }

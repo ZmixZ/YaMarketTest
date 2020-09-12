@@ -13,7 +13,7 @@ public class LoginTest extends TestBase {
     Properties properties;
 
     @Test
-    public void loginTest() throws IOException {
+    public void loginTest() throws IOException, InterruptedException {
         properties = new Properties();
         properties.load(new FileReader(new File("src/test/resources/local.properties")));
         app.getUserHelper().login(properties.getProperty("web.email"), properties.getProperty("web.pass"));

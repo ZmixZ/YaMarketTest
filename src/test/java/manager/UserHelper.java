@@ -22,11 +22,12 @@ public class UserHelper extends HelperBase{
     }
 
     public void goToYaMarketConfiguration() {
-        //button class _1YeOF5Jcfi _3uVlnI6yI8 или
-        //div class _1rVbTA0Eu9
-        //_2RNlwU5vum Настройки
+        if(ap.getSearchHelper().isElementPresent(By.xpath("//button[@class='_1YeOF5Jcfi _3uVlnI6yI8']"))){
+            click(By.xpath("//button[@class='_1YeOF5Jcfi _3uVlnI6yI8']"));
+            click(By.xpath("//span[text()='Настройки']"));
+        } else {
         click(By.xpath("//button[@class='_1YeOF5Jcfi _3qbyNoLh_b']"));
-        click(By.xpath("//span[text()='Настройки Маркета']"));
+        click(By.xpath("//span[text()='Настройки Маркета']"));}
         click(By.xpath("//a[text()='Изменить данные']"));
     }
 

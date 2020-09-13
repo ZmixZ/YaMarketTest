@@ -21,7 +21,7 @@ public class TestTiresAssert extends TestBase {
     public void testT() throws InterruptedException, IOException {
         properties = new Properties();
         properties.load(new FileReader(new File("src/test/resources/local.properties")));
-        Thread.sleep(6000);
+        Thread.sleep(5500);
         app.getSearchHelper().searchByLinks();
         app.getTiresHelper().filterTires(properties.getProperty("web.lowPrice"), properties.getProperty("web.hightPrice"));
         List<Tires> tires = app.getTiresHelper().listTires();

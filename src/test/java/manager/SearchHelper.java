@@ -21,10 +21,14 @@ public class SearchHelper extends HelperBase{
         //_2ZRlRXSh_x div class
         //q2jz_gHGnl div class
         //_10dWCjaZug div class
-        click(By.id("27903767-tab"));
-        click(By.id("41042240-tab"));
-        click(By.xpath("//a[text()='Шины']/.."));
-    }
+        if(isElementPresent(By.xpath("//span[@class='_14Uuc5WvKg']"))){
+            click(By.xpath("//span[@class='_14Uuc5WvKg']"));
+        } else {
+            click(By.id("27903767-tab"));}
+                click(By.id("41042240-tab"));
+                click(By.xpath("//a[text()='Шины']/.."));
+            }
+
 
     public void clickCharacteristic() {
         click(By.linkText("Характеристики"));

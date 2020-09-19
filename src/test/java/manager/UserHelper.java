@@ -2,6 +2,7 @@ package manager;
 
 import model.User;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
@@ -43,8 +44,10 @@ public class UserHelper extends HelperBase{
         ap.getSearchHelper().write(By.id("city"), city);
         User user = getUserData();
         click(By.xpath("//button[@type='submit']"));
-        //app.driver.findElement(By.xpath("//span[text()='Изменить регион']")).click();
-        //app.getSearchHelper().type(By.id("header-search"), By.xpath("//span[@class='_14Uuc5WvKg']"), "Москва");
+        ap.driver.findElement(By.xpath("//span[text()='Изменить регион']/..")).click();
+        ap.driver.findElement(By.xpath("//input[@placeholder='Укажите другой регион']")).sendKeys("Рязань");
+        ap.getSearchHelper().type(By.xpath("//span[text()='Продолжить с новым регионом']/.."), By.xpath("//b[text()='Рязань']/../.."), "Рязань");
+
         return user;
     }
 
@@ -56,4 +59,5 @@ public class UserHelper extends HelperBase{
                 withCity(ap.getSearchHelper().getAttribute(By.id("city"), "value"));
         return user;
     }
+
 }

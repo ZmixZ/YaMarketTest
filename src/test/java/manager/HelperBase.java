@@ -1,9 +1,6 @@
 package manager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 
 public class HelperBase {
     protected WebDriver driver;
@@ -22,12 +19,20 @@ public class HelperBase {
     }
 
     public void write(By locator, String attributeName) {
-        driver.findElement(locator).clear();
+        clearInput(locator);
         driver.findElement(locator).sendKeys(attributeName);
     }
 
     public String getAttribute(By locator, String text) {
         return driver.findElement(locator).getAttribute(text);
+    }
+
+    public void clearInput(By locator){
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int i=0;i<150;i++){
+            stringBuilder.append(Keys.BACK_SPACE);
+        }
+        driver.findElement(locator).sendKeys(stringBuilder.toString());
     }
 
     public boolean isElementPresent(By by) {

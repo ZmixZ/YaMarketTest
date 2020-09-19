@@ -19,6 +19,8 @@ dependencies {
     implementation 'org.testng:testng:7.1.0'
 
     implementation 'org.hamcrest:hamcrest:2.2'
+
+    implementation 'io.github.bonigarcia:webdrivermanager:4.2.0'
 }
 
 

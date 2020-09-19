@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="run tests in parallel" parallel="tests" verbose="1" configfailurepolicy="continue" thread-count="4"
+       data-provider-thread-count="4">
+    <test name="tests">
+        <classes>
+            <class name="tests.ConsoleTest"/>
+            <class name="tests.LoginTest"/>
+            <class name="tests.TestAssertCharacteristic"/>
+            <class name="tests.TestTiresAssert"/>
+        </classes>
+    </test>
+</suite>

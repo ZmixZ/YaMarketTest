@@ -2,8 +2,6 @@ package tests;
 
 import manager.TestBase;
 import model.User;
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.MatcherAssert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -15,8 +13,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class LoginTest extends TestBase {
 
